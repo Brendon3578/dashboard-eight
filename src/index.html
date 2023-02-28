@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+
+    <link rel="icon" type="svg" href="./icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="title" content="Dashboard Eight" />
+    <meta
+      name="description"
+      content="Um dashboard proposto no desafio 8 do #boraCodar da Rocketseat, o gráfico abaixo foi feito utilizando a biblioteca chart.js"
+    />
+    <meta
+      name="keywords"
+      content="dashboard, chart, graph, gráfico, tabela, rocketseat"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="Portuguese" />
+    <meta name="author" content="Brendon Gomes" />
+
+    <title>Dashboard Eight</title>
+  </head>
+  <body>
+    <main
+      class="p-10 flex flex-col gap-8 min-h-screen min-w-full text-white bg-background-700"
+    >
+      <div>
+        <h1 class="text-2xl font-semibold">Dashboard Eight</h1>
+        <p>
+          Um dashboard proposto no desafio 8 do
+          <span class="underline">#boraCodar</span> da Rocketseat, o último
+          gráfico foi feito utilizando a biblioteca chart.js
+        </p>
+      </div>
+      <section class="flex flex-wrap gap-8">
+        <!-- NPS geral -->
+        <div
+          class="flex-1 flex flex-col items-center justify-between gap-8 px-4 py-8 shadow-lg bg-background-500 rounded-2xl"
+        >
+          <h3 class="font-semibold text-2xl">NPS geral</h3>
+          <div class="flex flex-col items-center justify-center gap-4">
+            <img
+              class="w-20 h-20"
+              src="./assets/happy-face.svg"
+              alt="Emoji feliz"
+            />
+            <p class="text-green-150 font-semibold text-3xl">Excelente!</p>
+          </div>
+          <div>
+            <p class="text-sm">NPS Score <span>75</span></p>
+          </div>
+        </div>
+
+        <!-- Vendas fechadaas -->
+        <div
+          class="flex-1 flex flex-col items-center justify-between gap-8 px-4 py-8 shadow-lg bg-background-500 rounded-2xl"
+        >
+          <h3 class="font-semibold text-2xl">Vendas fechadas</h3>
+          <div class="flex flex-col items-center justify-center gap-4">
+            <img class="w-40 h-40" src="./assets/graph-1.svg" alt="Gráfico 1" />
+          </div>
+          <div class="flex gap-4">
+            <div class="text-sm flex gap-2 items-center">
+              <div
+                class="w-4 h-4 bg-background-400 rounded-full shadow-sm"
+              ></div>
+              <span> Esperado </span>
+              <span>100</span>
+            </div>
+
+            <div class="text-sm flex gap-2 items-center">
+              <div
+                class="w-4 h-4 bg-gradient-to-br from-rose-200 to-indigo-500 rounded-full shadow-sm"
+              ></div>
+              <span> Alcançado </span>
+              <span>70</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meta  Mensal -->
+        <div
+          class="flex-1 flex flex-col items-center justify-between gap-8 px-4 py-8 shadow-lg bg-background-500 rounded-2xl"
+        >
+          <h3 class="font-semibold text-2xl">Meta mensal</h3>
+          <div class="flex flex-col items-center justify-center gap-4">
+            <img class="w-40 h-40" src="./assets/graph-2.svg" alt="Gráfico 2" />
+          </div>
+          <div class="flex gap-4">
+            <div class="text-sm flex gap-2 items-center">
+              <div
+                class="w-4 h-4 bg-background-400 rounded-full shadow-sm"
+              ></div>
+              <span> Esperado </span>
+              <span>R$ 70K</span>
+            </div>
+
+            <div class="text-sm flex gap-2 items-center">
+              <div
+                class="w-4 h-4 bg-gradient-to-br from-orange-400 to-purple-400 rounded-full shadow-sm"
+              ></div>
+              <span> Alcançado </span>
+              <span>R$ 63K</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="flex flex-col justify-center gap-2 p-8 shadow-lg bg-background-500 rounded-2xl"
+      >
+        <h2 class="text-2xl font-semibold mb-4">Vendas por dia da semana</h2>
+        <div class="flex flex-col lg:flex-row justify-between">
+          <div class="basis-1/2 flex flex-col gap-8">
+            <div>
+              <div class="flex items-center gap-1 text-sm">
+                <img
+                  src="./assets/caret-up-fill.svg"
+                  alt="seta para cima"
+                  class="h-5 w-5"
+                />
+                <span> Dia com mais vendas </span>
+              </div>
+
+              <p class="text-2xl" id="dayWithMoreSales">quarta-feira</p>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-1 text-sm">
+                <img
+                  src="./assets/caret-down-fill.svg"
+                  alt="seta para cima"
+                  class="h-5 w-5"
+                />
+                <span> Dia com menos vendas </span>
+              </div>
+
+              <p class="text-2xl" id="dayWithLessSales">domingo</p>
+            </div>
+          </div>
+          <div class="basis-1/2">
+            <div class="w-full">
+              <canvas style="width: 100%" id="salesByDayWeekday"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="p-2 min-w-full flex items-center justify-center text-white bg-background-700"
+    >
+      Feito com ☕ por&nbsp;
+      <a href="https://brendongomes.vercel.app/">Brendon Gomes</a>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
