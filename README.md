@@ -4,6 +4,14 @@
 
 Um dashboard proposto no desafio 8 do #boraCodar da Rocketseat, o último gráfico foi feito utilizando a biblioteca chart.js
 
+```bash
+ # Para iniciar a aplicação basta utilizar os seguintes comandos:
+ npm install
+ npm run dev
+ # ou
+ yarn dev
+```
+
 ## 📷 Layout
 
 O layout da aplicação está disponível no Figma:
